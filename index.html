@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090711">
+<meta name="description" content="ელენესთვის — ერთი გულწრფელი ისტორია.">
+<title>ელენე, ახლა შენი ჯერია ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700&family=Noto+Serif+Georgian:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090711;--panel:#15101e;--pink:#ff83b2;--rose:#d84c91;--purple:#b39aff;--white:#fff3f8;--muted:#cdbed5;--line:rgba(255,255,255,.12);--serif:'Noto Serif Georgian',Georgia,serif;--sans:'Noto Sans Georgian',system-ui,sans-serif;--ease:cubic-bezier(.22,.8,.3,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--white);font-family:var(--sans);font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:env(safe-area-inset-top,0px)}
+body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 12% 8%,#6b348a38,transparent 40%),radial-gradient(ellipse at 92% 55%,#9a2a6a26,transparent 40%),radial-gradient(ellipse at 40% 100%,#3d2a7a22,transparent 45%)}
+button,textarea,a{font:inherit}a{color:inherit;text-decoration:none}button{color:inherit;cursor:pointer}
+::selection{background:#e75a98;color:#fff}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+
+/* ვარსკვლავები */
+#stars{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#ffd6e7;box-shadow:0 0 9px #ff91bd;animation:twinkle 3s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.25}to{opacity:.9;transform:scale(1.6)}}
+
+/* ნავიგაცია */
+.nav{position:sticky;top:0;z-index:20;min-height:70px;padding:0 max(20px,calc((100vw - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;background:#090711e6;border-bottom:1px solid #ffffff14;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.brand-symbol{font:30px var(--serif);color:var(--pink);text-shadow:0 0 18px #ff83b280;animation:beat 2.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}12%{transform:scale(1.18)}24%{transform:scale(1)}36%{transform:scale(1.1)}}
+.brand-name{font:14px var(--serif)}.brand-name small{display:block;color:#a392ad;font:10px var(--sans);margin-top:4px}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{position:relative;font-size:12px;color:#d0c2da;padding:6px 0;transition:color .25s}
+.nav-links a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--pink);transition:width .3s var(--ease)}
+.nav-links a:hover{color:var(--pink)}.nav-links a:hover:after{width:100%}
+
+/* ზოგადი */
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+section{scroll-margin-top:80px}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--pink);font-size:12px;letter-spacing:.1em;margin-bottom:22px}
+.eyebrow:after{content:"";height:1px;width:46px;background:linear-gradient(90deg,var(--pink),transparent)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin-top:0}
+h1{font-size:clamp(36px,5.8vw,70px);line-height:1.45;letter-spacing:-.03em;margin-bottom:24px;text-wrap:balance}
+h2{font-size:clamp(30px,4vw,50px);line-height:1.5;margin-bottom:20px;text-wrap:balance}
+h3{font-size:21px;line-height:1.6}
+p{font-size:15px;line-height:2;color:var(--muted);margin-top:0}
+.gradient{background:linear-gradient(100deg,#fff0f7,#ff83b2 50%,#c6a9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.script{font-family:var(--serif);font-style:italic;color:#ff9bc3}
+
+/* ღილაკები */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:14px 28px;border-radius:999px;border:1px solid transparent;background:linear-gradient(110deg,#ff8ab5,#d84c91);color:#2a0c1d;font-size:13px;font-weight:600;box-shadow:0 10px 34px #e74a9238;transition:transform .3s var(--ease),box-shadow .3s,filter .3s}
+.btn:before{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,#ffffff55,transparent);transform:skewX(-20deg);transition:left .6s var(--ease)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px #e74a925c;filter:brightness(1.06)}.btn:hover:before{left:130%}
+.btn:active{transform:translateY(0)}
+.btn:disabled{opacity:.7;cursor:not-allowed;transform:none}
+.outline{background:#ffffff0a;color:#f6dfeb;border-color:#ff91be52;box-shadow:none}
+.outline:hover{background:#ff83b214;box-shadow:0 10px 30px #b39aff22}
+
+/* მთავარი */
+.hero{min-height:min(720px,100vh);position:relative;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#090711f5 0%,#090711c9 48%,#09071130 100%),url("hero.jpg") center 48%/cover no-repeat,radial-gradient(ellipse at 70% 40%,#5a2a78,#090711 70%)}
+.hero-inner{position:relative;z-index:2;padding:96px 0;max-width:780px}
+.hero p{max-width:600px}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:32px}
+.tiny{font-size:12px;color:#d3b3d0}
+.hero-side{position:absolute;right:5%;bottom:11%;font:italic 15px/2 var(--serif);color:#f6bddb;transform:rotate(-7deg);text-shadow:0 2px 16px #090711;z-index:2}
+.hearts{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.heart{position:absolute;bottom:-40px;color:var(--pink);opacity:0;animation:rise linear infinite;text-shadow:0 0 14px #ff83b2aa}
+@keyframes rise{0%{transform:translateY(0) rotate(-10deg);opacity:0}12%{opacity:.7}100%{transform:translateY(-780px) rotate(14deg);opacity:0}}
+
+/* სექციები */
+.section{padding:100px 0;border-bottom:1px solid var(--line);position:relative}
+.two-col{display:grid;grid-template-columns:1fr .9fr;gap:56px;align-items:center}
+.response-section{background:linear-gradient(90deg,#090711f5,#090711bd),url("letter.jpg") center/cover no-repeat,var(--bg)}
+.quote{font:italic 19px/1.9 var(--serif);color:#f5cce0;border-left:2px solid var(--pink);padding:6px 0 6px 22px;margin-top:28px}
+
+/* ფორმა */
+.form-panel{border:1px solid #ff8fbe34;border-radius:6px;background:linear-gradient(145deg,#1e1329ec,#0e0a14f5);padding:clamp(24px,4vw,38px);position:relative;box-shadow:0 30px 80px #0006,0 0 60px #ff83b210}
+.form-panel:before{content:"";position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.number{color:var(--pink);font-size:12px;letter-spacing:.12em;margin-bottom:16px}
+.form-heading{font:25px/1.7 var(--serif);margin-bottom:8px}
+.form-sub{font-size:13px;line-height:1.9;color:#b9a8c4;margin-bottom:22px}
+.field-label{display:block;font-size:13px;color:#ecd4e3;margin:18px 0 10px}
+textarea{display:block;width:100%;min-height:165px;resize:vertical;border:1px solid #c19de244;border-radius:6px;background:#0b0812;color:#fff1f7;padding:16px;font:14px/2 var(--sans);outline:none;transition:border-color .25s,box-shadow .25s}
+textarea:focus{border-color:var(--pink);box-shadow:0 0 0 4px #ff83b218}
+textarea::placeholder{color:#7d708a}
+.counter{display:flex;justify-content:space-between;font-size:12px;color:#8f829b;margin-top:9px}
+.form-panel .btn{width:100%;margin-top:20px}
+.note{font-size:12px!important;line-height:1.8;margin:14px 0 0}
+
+/* სიტყვა */
+.confession-grid{display:grid;grid-template-columns:.65fr 1.35fr .65fr;gap:30px;align-items:center}
+.polaroid{padding:10px 10px 24px;background:#ecc8d5;color:#311421;box-shadow:0 22px 55px #0007;transform:rotate(-7deg);transition:transform .5s var(--ease)}
+.polaroid:nth-child(3){transform:rotate(7deg)}
+.polaroid:hover{transform:rotate(0) scale(1.04)}
+.polaroid-img{height:185px;background:url("couple.jpg") center/cover no-repeat,linear-gradient(135deg,#a85a82,#5a2a78)}
+.polaroid:nth-child(3) .polaroid-img{background-image:url("roses.jpg"),linear-gradient(135deg,#5a2a78,#a85a82)}
+.polaroid p{font:12px/1.8 var(--serif);text-align:center;color:#482439;margin:14px 0 0}
+.confession-center{text-align:center}
+.quote-paper{max-width:500px;margin:0 auto 26px;padding:36px 22px;background:linear-gradient(145deg,#f4cddb,#c88ea9);color:#321727;box-shadow:0 18px 60px #0005,0 0 50px #ff83b21c;border-radius:3px}
+.quote-paper p{font:clamp(22px,3vw,30px)/1.8 var(--serif);color:#38172a;margin:0}
+.confession-center>p{max-width:500px;margin:0 auto 24px;font-size:14px}
+
+/* არჩევანი */
+.choice-section{background:linear-gradient(90deg,#0d0914f0,#100b1887),url("couple.jpg") center/cover no-repeat,var(--bg)}
+.choice-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.choice-note{border-left:2px solid #ff84b466;padding:4px 0 4px 22px}.choice-note p{margin:0}
+.choice-cards{display:grid;gap:14px}
+.choice-card{padding:26px;border:1px solid var(--line);border-radius:6px;background:#100b19ec;transition:border-color .3s,background .3s,transform .3s var(--ease)}
+.choice-card:hover{transform:translateY(-3px);border-color:#ff83b270}
+.choice-card.selected{border-color:#ff83b2c0;background:#ff83b212;box-shadow:0 0 40px #ff83b21c}
+.choice-symbol{font-size:28px;color:var(--pink);margin-bottom:12px}
+.choice-card h3{font-size:23px;margin-bottom:6px}
+.choice-card p{font-size:13px;margin-bottom:8px}
+.choice-card .btn{width:100%;margin-top:12px}
+.choice-status{font-size:13px;line-height:1.9;color:#e0c0d3;margin-top:12px}
+
+/* ფინალი */
+.final-section{padding:100px 0;background:linear-gradient(90deg,#090711f4,#0907119e),url("ending.jpg") center/cover no-repeat,var(--bg)}
+.final-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.final-message{font:clamp(28px,4vw,44px)/1.8 var(--serif);color:#ff9ec4;text-shadow:0 0 30px #ff83b244}
+.final-message span{display:block}
+.final-form{padding:clamp(24px,4vw,36px);border:1px solid #ff87b63f;border-radius:6px;background:#0e0a14ef;box-shadow:0 30px 80px #0006}
+.final-form textarea{min-height:140px}
+.final-form .btn{width:100%;margin-top:18px}
+.status{font-size:13px;line-height:1.9;margin-top:14px;display:none}.status.visible{display:block}
+.status.error{color:#ffb4c8}.status.ok{color:#b9f1d2}
+.success{display:none;padding:26px 16px;text-align:center;border:1px solid #ff8cbb55;border-radius:6px;background:#ff85b210;margin-top:18px}
+.success.visible{display:block;animation:pop .6s var(--ease)}
+@keyframes pop{from{opacity:0;transform:scale(.94)}}
+.success h3{color:#ffb8d2}
+.hidden{display:none!important}
+
+/* ფუტერი */
+.footer{border-top:1px solid var(--line);padding:34px 0 calc(30px + env(safe-area-inset-bottom,0px))}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer-brand{display:flex;align-items:center;gap:12px;font-size:12px;color:#dcc6da}
+.footer-brand span{font:26px var(--serif);color:var(--pink)}
+.footer-links{display:flex;gap:18px;font-size:12px;color:#a897b3;flex-wrap:wrap}
+.footer-links a:hover{color:var(--pink)}
+.credit{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:#a897b3}
+.credit img{height:24px;width:auto;max-width:60px;object-fit:contain;border-radius:4px}
+
+/* გამოჩენა */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:820px){
+.nav{padding:0 18px}.nav-links{gap:14px}.nav-links a{font-size:11px}
+.wrap{width:calc(100% - 38px)}
+.two-col,.choice-layout,.final-layout{grid-template-columns:1fr;gap:32px}
+.confession-grid{grid-template-columns:.7fr 1.5fr;gap:18px}.confession-grid .polaroid:nth-child(3){display:none}
+.polaroid-img{height:150px}.section{padding:78px 0}}
+@media(max-width:560px){
+.nav{min-height:62px;padding:0 15px}.brand-symbol{font-size:26px}.brand-name{font-size:12px}.brand-name small{font-size:9px}
+.nav-links a{display:none}.nav-links a:last-child{display:block;font-size:24px}
+.wrap{width:calc(100% - 32px)}
+.hero{min-height:640px;background-position:58% center}.hero-inner{padding:78px 0 96px}
+.hero h1{font-size:clamp(33px,9vw,46px)}.hero-side{right:5%;bottom:4%;font-size:12px}
+.section{padding:68px 0}.eyebrow{font-size:11px}.two-col{gap:26px}
+.form-panel{padding:24px 18px}.form-heading{font-size:22px}
+.confession-grid{grid-template-columns:1fr}.confession-grid .polaroid{display:none}
+.choice-card{padding:22px 18px}.final-section{padding:70px 0;background-position:58% center}.final-message{font-size:30px}
+.footer-inner{flex-direction:column;text-align:center}.footer-links{justify-content:center;gap:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.heart{display:none}}
+</style>
+</head>
+<body>
+<div id="stars" aria-hidden="true"></div>
+<header class="nav">
+  <a class="brand" href="#home"><span class="brand-symbol">♡</span><span class="brand-name">ელენე, ეს შენთვის...<small>ერთი გულწრფელი ისტორია</small></span></a>
+  <nav class="nav-links" aria-label="ნავიგაცია"><a href="#home">მთავარი</a><a href="#letter">შენი გრძნობები</a><a href="#words">ჩემი სიტყვა</a><a href="#choice">ჩვენი ისტორია</a><a href="#ending" aria-label="ფინალი">♡</a></nav>
+</header>
+<main>
+<section class="hero" id="home"><div class="hearts" id="hearts" aria-hidden="true"></div><div class="wrap"><div class="hero-inner">
+  <div class="eyebrow">ჩემი ისტორია</div>
+  <h1>ელენე,<br><span class="gradient">ეს არის ჩემი ნამდვილი გრძნობების გაგრძელება…</span> <span class="script">♡</span></h1>
+  <p>გახსოვს, როცა ჩემი გრძნობები გაგიზიარე და სიყვარულში გამოგიტყდი? იმ მომენტში შენთან ის ვთქვი, რასაც გულში ვატარებდი. ახლა კი მინდა, შენც მომიყვე შენი გრძნობების შესახებ.</p>
+  <p>არ მინდა წინასწარ ვივარაუდო შენი პასუხი. მინდა, შენგან გავიგო — გულწრფელად, თავისუფლად და შენი სიტყვებით.</p>
+  <div class="hero-meta"><a class="btn" href="#letter">გავაგრძელოთ… →</a><span class="tiny">ერთი კითხვა მაქვს შენთან ♡</span></div>
+</div></div><div class="hero-side">შენ ჩემი<br>გულწრფელი ამბის<br>მთავარი ნაწილი ხარ… ♡</div></section>
+
+<section class="section response-section" id="letter"><div class="wrap two-col">
+  <div class="reveal"><div class="eyebrow">შენი პასუხი</div><h2>მინდა ვიცოდე,<br><span class="gradient">რას გრძნობ შენ.</span></h2>
+    <p>მე ჩემი სათქმელი უკვე გითხარი. ახლა კი მინდა, შენც მომცე საშუალება, შენი თვალით დავინახო ეს ისტორია.</p>
+    <p>არ არის აუცილებელი, ბევრი წერო ან განსაკუთრებული სიტყვები მოძებნო. შეგიძლია უბრალოდ ის მითხრა, რასაც მართლა გრძნობ.</p>
+    <div class="quote">„ზოგჯერ ყველაზე მნიშვნელოვანი პასუხი ის არის, რომელსაც გულწრფელად ამბობ.“</div>
+  </div>
+  <div class="form-panel reveal"><div class="number">LETTER Nº 01</div><div class="form-heading">ელენე, გიყვარვარ? <span class="script">♡</span></div><p class="form-sub">ეს კითხვა შენთვის მოვამზადე. პასუხი შენია — დაწერე ისე, როგორც შენ გინდა.</p>
+    <label class="field-label" for="loveMessage">შენი წერილი ჩემთვის</label><textarea id="loveMessage" maxlength="3000" placeholder="მინდა, გულწრფელად გითხრა, რომ…"></textarea><div class="counter"><span>შენი სიტყვები</span><span><span id="loveCount">0</span>/3000</span></div>
+    <button class="btn" id="saveLove" type="button">ჩემი პასუხის შენახვა ♡</button><p class="note">♡ წერილის დატოვება სურვილისამებრ შეგიძლია. ტექსტი ამ გვერდზე შენარჩუნდება.</p><div class="status" id="loveStatus" role="status"></div>
+  </div>
+</div></section>
+
+<section class="section" id="words"><div class="wrap"><div class="eyebrow">ჩემი სიტყვა შენთვის</div><div class="confession-grid">
+  <div class="polaroid reveal"><div class="polaroid-img"></div><p>ერთი გრძნობა,<br>ერთი გულწრფელი ამბავი</p></div>
+  <div class="confession-center reveal"><div class="number">A NOTE FROM MY HEART</div><div class="quote-paper"><p>ყველაფერი ნათელია,<br>მე მიყვარხარ !</p><div style="font-size:26px;margin-top:10px">♡</div></div><p>ეს ჩემი სიტყვებია შენთვის. არ მინდა, ამ გრძნობას ზედმეტი ახსნა მოვუძებნო — მინდოდა, უბრალოდ გცოდნოდა, რას ვგრძნობ.</p><a href="#choice" class="btn">შემდეგი კითხვა →</a></div>
+  <div class="polaroid reveal"><div class="polaroid-img"></div><p>შენთვის დაწერილი<br>პატარა მოგონება ♡</p></div>
+</div></div></section>
+
+<section class="section choice-section" id="choice"><div class="wrap choice-layout">
+  <div class="reveal"><div class="eyebrow">ჩვენი ისტორია</div><h2>ელენე,<br><span class="gradient">ვიყოთ წყვილი?</span> <span class="script">♡</span></h2><p>მინდა ვიცოდე, გინდა თუ არა, რომ ეს გრძნობა ერთად გავაგრძელოთ. ჩემთვის მნიშვნელოვანი იქნება, თუ შენი სურვილით აირჩევ პასუხს.</p><div class="choice-note"><p>არ არის საჭირო იჩქარო. ყველაზე ლამაზი დასაწყისი მაშინ არის, როცა ორივე ადამიანი ნამდვილად მზად არის.</p></div></div>
+  <div class="choice-cards reveal">
+    <article class="choice-card" id="yesCard"><div class="choice-symbol">♡</div><h3>კი, ვიყოთ ერთად</h3><p>თუ შენც გინდა ჩვენი ისტორიის ახალ ეტაპზე გადასვლა.</p><button class="btn" id="yesCouple" type="button">კი, მინდა ❤️ →</button></article>
+    <article class="choice-card" id="notReadyCard"><div class="choice-symbol" style="color:var(--purple)">✧</div><h3>ჯერ არ ვარ მზად</h3><p>შენი გულწრფელობა მნიშვნელოვანია, როგორი პასუხიც არ უნდა გქონდეს.</p><button class="btn outline" id="notReady" type="button">ჯერ არ ვარ მზად →</button></article>
+    <div class="choice-status" id="choiceStatus" role="status">აირჩიე ის პასუხი, რომელიც შენს ნამდვილ გრძნობებს გამოხატავს.</div>
+  </div>
+</div></section>
+
+<section class="final-section" id="ending"><div class="wrap final-layout">
+  <div class="reveal"><div class="eyebrow">ჩვენი დასასრული… თუ დასაწყისი?</div>
+    <div id="endingDefault"><h2>აქ ჯერ კიდევ<br><span class="gradient">ერთი პატარა ნაბიჯია.</span></h2><p>როცა შენს პასუხს აირჩევ, აქ გამოჩნდება შესაბამისი გაგრძელება. შეგიძლია დამატებითი წერილიც დატოვო.</p></div>
+    <div id="endingYes" class="hidden"><div class="final-message"><span>ასეც ვიცოდი !</span><span>დღეიდან ერთად ვართ !</span><span>ახლა კი მომწერე &lt;3 ! ♡</span></div><p>ჩვენი ისტორიის ახალი თავი — თუ ეს ორივეს გვსურს. ახლა კი შეგიძლია კიდევ რაღაც მითხრა.</p></div>
+    <div id="endingNo" class="hidden"><h2>მადლობა,<br><span class="gradient">რომ გულწრფელი ხარ.</span></h2><p>შენს გრძნობებს პატივს ვცემ. არ გჭირდება პასუხის შეცვლა ან იმის თქმა, რასაც სინამდვილეში არ გრძნობ.</p></div>
+  </div>
+  <div class="final-form reveal"><div class="number">ONE LAST LETTER</div><h3 id="finalFormTitle">კიდევ რაღაცის თქმა გინდა?</h3><p id="finalFormDesc" class="form-sub">თუ გინდა, დამიტოვე წერილი. შენი სიტყვები ჩემამდე მოვა.</p>
+    <label class="field-label" for="finalMessage">შენი წერილი</label><textarea id="finalMessage" maxlength="3000" placeholder="შენი სიტყვები აქ დარჩება…"></textarea><div class="counter"><span>ბოლო წერილი</span><span><span id="finalCount">0</span>/3000</span></div>
+    <button class="btn" id="sendResponse" type="button">გაგზავნა 💌 →</button><div class="status" id="finalStatus" role="status" aria-live="polite"></div><div id="successScreen" class="success"><div style="font-size:35px;color:var(--pink)">♡</div><h3>შენი წერილი გაიგზავნა.</h3><p>მადლობა გულწრფელობისთვის, ელენე.</p></div>
+  </div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner">
+  <div class="footer-brand"><span>♡</span><div>ელენე, ეს შენთვის...<br><small>ერთი გულწრფელი ისტორია</small></div></div>
+  <div class="footer-links"><a href="#home">მთავარი</a><a href="#letter">შენი პასუხი</a><a href="#words">ჩემი სიტყვა</a><a href="#choice">ჩვენი ისტორია</a></div>
+  <div class="credit"><img src="logo.png" alt="" onerror="this.style.display='none'"><span>შექმნილია დენის მიერ</span></div>
+</div></footer>
+
+<script>
+(() => {
+  // ჩასვი შენი Formspree endpoint, მაგალითად: https://formspree.io/f/XXXXXXXX
+  const ENDPOINT = "";
+  const $ = id => document.getElementById(id);
+  const state = { loveLetter:"", coupleAnswer:"", finalLetter:"" };
+
+  function status(id, message, type) {
+    const el = $(id); el.textContent = message; el.className = "status visible " + type;
+  }
+  function counter(textId, countId) {
+    $(textId).addEventListener("input", () => $(countId).textContent = $(textId).value.length);
+  }
+  counter("loveMessage","loveCount"); counter("finalMessage","finalCount");
+
+  // Gentle reveal animations
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); observer.unobserve(e.target); }
+    }), {threshold:.12});
+    reveals.forEach(el => observer.observe(el));
+  } else reveals.forEach(el => el.classList.add("in"));
+
+  // Decorative stars
+  for (let i=0;i<55;i++) {
+    const s=document.createElement("i"); s.className="star";
+    s.style.left=Math.random()*100+"%"; s.style.top=Math.random()*100+"%";
+    s.style.animationDelay=Math.random()*4+"s"; s.style.animationDuration=(2+Math.random()*4)+"s";
+    $("stars").appendChild(s);
+  }
+
+  // Floating hearts in hero
+  for (let i=0;i<14;i++) {
+    const h=document.createElement("span"); h.className="heart"; h.textContent="♡";
+    h.style.left=Math.random()*100+"%"; h.style.fontSize=(12+Math.random()*20)+"px";
+    h.style.animationDuration=(9+Math.random()*9)+"s"; h.style.animationDelay=(Math.random()*12)+"s";
+    $("hearts").appendChild(h);
+  }
+
+  $("saveLove").addEventListener("click", () => {
+    state.loveLetter=$("loveMessage").value.trim();
+    status("loveStatus","შენი პასუხი ამ გვერდზე შენახულია. შეგიძლია გააგრძელო. ♡","ok");
+    $("words").scrollIntoView({behavior:"smooth"});
+  });
+
+  function choose(answer) {
+    state.coupleAnswer=answer;
+    $("yesCard").classList.toggle("selected",answer==="კი, ვიყოთ ერთად");
+    $("notReadyCard").classList.toggle("selected",answer!=="კი, ვიყოთ ერთად");
+    $("endingDefault").classList.add("hidden");
+    $("endingYes").classList.toggle("hidden",answer!=="კი, ვიყოთ ერთად");
+    $("endingNo").classList.toggle("hidden",answer==="კი, ვიყოთ ერთად");
+    if(answer==="კი, ვიყოთ ერთად") {
+      $("finalFormTitle").textContent="ახლა კი მომწერე <3 !";
+      $("finalFormDesc").textContent="თუ კიდევ რაღაცის თქმა გინდა, დამიტოვე წერილი — სიამოვნებით წავიკითხავ.";
+      $("choiceStatus").textContent="შენ დადებითი პასუხი აირჩიე. შენი ისტორიის გაგრძელება ქვემოთ გელოდება. ♡";
+    } else {
+      $("finalFormTitle").textContent="გინდა, კიდევ რაღაც მითხრა?";
+      $("finalFormDesc").textContent="შეგიძლია სურვილისამებრ დატოვო წერილი. პასუხის შეცვლა არ გევალება.";
+      $("choiceStatus").textContent="მადლობა გულწრფელი პასუხისთვის. ქვემოთ შეგიძლია წერილიც დატოვო.";
+    }
+    $("ending").scrollIntoView({behavior:"smooth"});
+  }
+  $("yesCouple").addEventListener("click",()=>choose("კი, ვიყოთ ერთად"));
+  $("notReady").addEventListener("click",()=>choose("ჯერ არ ვარ მზად"));
+
+  let sending=false;
+  $("sendResponse").addEventListener("click",async()=>{
+    if(sending)return;
+    if(!state.coupleAnswer){status("finalStatus","ჯერ აირჩიე პასუხი კითხვაზე „ვიყოთ წყვილი?“.","error");$("choice").scrollIntoView({behavior:"smooth"});return;}
+    if(!ENDPOINT.trim()){status("finalStatus",'Formspree endpoint ცარიელია. კოდში მოძებნე const ENDPOINT = "" და ჩასვი შენი endpoint. წერილი არ გაგზავნილა.',"error");return;}
+    if(!/^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(ENDPOINT.trim())){status("finalStatus","Formspree endpoint-ის ფორმატი გადაამოწმე.","error");return;}
+    state.loveLetter=$("loveMessage").value.trim(); state.finalLetter=$("finalMessage").value.trim();
+    const button=$("sendResponse"), original=button.innerHTML; sending=true;button.disabled=true;button.textContent="იგზავნება…";
+    const form=new FormData();
+    form.append("subject","ელენეს პასუხი — სიყვარულის ისტორია");
+    form.append("სახელი","ელენე");
+    form.append("კითხვა_გიყვარვარ_წერილი",state.loveLetter||"წერილი არ დაუტოვებია");
+    form.append("ვიყოთ_წყვილი",state.coupleAnswer);
+    form.append("დამატებითი_წერილი",state.finalLetter||"დამატებითი წერილი არ დაუტოვებია");
+    try{
+      const res=await fetch(ENDPOINT.trim(),{method:"POST",body:form,headers:{Accept:"application/json"}});
+      if(!res.ok)throw new Error("Form submission failed");
+      $("successScreen").classList.add("visible");status("finalStatus","შეტყობინება წარმატებით გაიგზავნა. ♡","ok");
+      button.textContent="გაგზავნილია ✓";button.disabled=true;
+    }catch(e){status("finalStatus","გაგზავნა ვერ მოხერხდა. შეამოწმე ინტერნეტი და endpoint, შემდეგ სცადე ხელახლა.","error");button.disabled=false;button.innerHTML=original;}
+    finally{sending=false;}
+  });
+})();
+</script>
+</body>
+</html>
